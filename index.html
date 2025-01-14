@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Stage Fright - Rock Band</title>
+<link rel="stylesheet" href="project.css">
+</head>
+
+
+<body>
+   <header>
+       <!-- Logo and Navigation Menu -->
+       <div class="logo-container">
+           <img src="path-to-your-logo.png" alt="Stage Fright Logo" class="logo">
+       </div>
+       <nav>
+           <ul>
+               <li><a href="#about">Home</a></li>
+               <li><a href="#tour">Tour</a></li>
+               <li><a href="merch.html">Shop</a></li>
+               <li><a href="#contact">Contact Us</a></li>
+           </ul>
+       </nav>
+   </header>
+
+
+   <main>
+       <!-- About Section with Slider -->
+       <section id="about">
+           <h2>About the Band</h2>
+           <p>Stage Fright is an electrifying rock band known for their raw energy and captivating performances. Formed in 2020, the band blends classic rock vibes with a modern twist.</p>
+
+
+           <!-- Slider for band members -->
+           <div class="slider">
+               <button class="arrow left" onclick="changeSlide(-1)">&#8249;</button> <!-- Left arrow button -->
+               <div class="slides">
+                   <!-- Each slide contains a band member -->
+                   <div class="slide">
+                       <img src="alex_vocal.jpg" alt="Alex Stone">
+                       <h3>Bill</h3>
+                       <p>Lead Vocalist</p>
+                   </div>
+                   <div class="slide">
+                       <img src="jamie_guitar.jpg" alt="Jamie Rivers">
+                       <h3>Jeffrey</h3>
+                       <p>Guitarist</p>
+                   </div>
+                   <div class="slide">
+                       <img src="tay_drums.png" alt="Taylor Knox">
+                       <h3>Diddy</h3>
+                       <p>Drummer</p>
+                   </div>
+                   <div class="slide">
+                       <img src="jordan_bass.png" alt="Jordan Lake">
+                       <h3>Osama</h3>
+                       <p>Bassist</p>
+                   </div>
+               </div>
+               <button class="arrow right" onclick="changeSlide(1)">&#8250;</button> <!-- Right arrow button -->
+           </div>
+       </section>
+      
+      
+ <!-- Tour Dates Section -->
+
+ <section id="tour">
+
+    <h2>Tour Dates</h2>
+
+    <table>
+
+        <tr>
+
+            <th>Date</th>
+
+            <th>Location</th>
+
+            <th>Tickets</th>
+
+        </tr>
+
+        <tr>
+
+            <td>March 15, 2025</td>
+
+            <td>New York, NY</td>
+
+            <td><a href="merch.html#tickets">Buy Tickets</a></td>
+
+        </tr>
+
+        <tr>
+
+            <td>April 10, 2025</td>
+
+            <td>Los Angeles, CA</td>
+
+            <td><a href="merch.html#tickets">Buy Tickets</a></td>
+
+        </tr>
+
+        <tr>
+
+            <td>May 5, 2025</td>
+
+            <td>Chicago, IL</td>
+
+            <td><a href="merch.html#tickets">Buy Tickets</a></td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+         <!-- Contact Us Section -->
+      <section id="contact">
+       <h2>Contact Us</h2>
+       <p>For bookings, email us at <a href="mailto:bookings@stagefright.com">bookings@stagefright.com</a>.</p>
+       <p>Customer service inquiries? Reach out at <a href="mailto:support@stagefright.com">support@stagefright.com</a>.</p>
+       <p>Or connect with us through our <a href="#">contact form</a>.</p>
+   </section>
+
+
+   </main>
+
+
+   <footer>
+       <p>&copy; 2025 Stage Fright. All Rights Reserved.</p>
+   </footer>
+
+
+   <script>
+       // JavaScript for controlling the slider
+       let currentIndex = 0; // Current slide index
+
+
+       function changeSlide(direction) {
+           const slides = document.querySelector('.slides'); // Get the slides container
+           const totalSlides = slides.children.length; // Total number of slides
+
+
+           // Update the current index based on direction (-1 for left, 1 for right)
+           currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+
+           // Move the slides container to the correct position
+           slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+       }
+   </script>
+</body>
+
+
+</html>
+
+
+

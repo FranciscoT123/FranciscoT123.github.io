@@ -1,0 +1,282 @@
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+ }
+ 
+ /* Header Section */
+ header {
+    background: url('path-to-stars-pattern.png') center center / cover, linear-gradient(90deg, #1f1f1f, #3a3a3a);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+ }
+ 
+ .logo-container {
+    display: inline-block;
+    margin-bottom: 15px;
+ }
+ 
+ .logo {
+    width: 150px;
+    height: auto;
+ }
+ 
+ nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+ }
+ 
+ nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 1.1em;
+    padding: 10px;
+    transition: color 0.3s ease;
+ }
+ 
+ nav ul li a:hover {
+    color: #ff5252;
+ }
+ 
+ /* Hero Section */
+ .hero {
+    margin: 20px 0;
+ }
+ 
+ .hero h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0;
+ }
+ 
+ .hero p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+ }
+ 
+ /* Sections */
+ main section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-bottom: 1px solid #333;
+ }
+ 
+ main section h2 {
+    font-size: 2em;
+    color: #ff5252;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+ }
+ 
+ /* About Section */
+ .band-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+ }
+ 
+ .member {
+    text-align: center;
+ }
+ 
+ .member img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #ff5252;
+ }
+ 
+ .member h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+ }
+ 
+ /* Tour Dates */
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+ }
+ 
+ table th, table td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+ }
+ 
+ table th {
+    background-color: #181818;
+    color: #ff5252;
+    text-transform: uppercase;
+ }
+ 
+ table td a {
+    color: #ff5252;
+    text-decoration: none;
+    font-weight: bold;
+ }
+ 
+ table td a:hover {
+    text-decoration: underline;
+ }
+ 
+ /* Merch Section */
+ .merch-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+ }
+ 
+ .item {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+ }
+ 
+ .item:hover {
+    transform: scale(1.05);
+ }
+ 
+ .item img {
+    width: 100%;
+    border-radius: 10px;
+ }
+ 
+ .item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #ff5252;
+ }
+ 
+ .item button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff5252;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .item button:hover {
+    background-color: #e00000;
+ }
+ 
+ /* Contact Section */
+ #contact a {
+    color: #ff5252;
+    text-decoration: none;
+ }
+ 
+ #contact a:hover {
+    text-decoration: underline;
+ }
+ 
+ /* Footer */
+ footer {
+    background-color: #181818;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+ }
+ 
+ footer p {
+    margin: 0;
+ }
+ 
+ /* Slider Section */
+ .slider {
+    position: relative; /* Position relative for child elements like arrows */
+    overflow: hidden; /* Hides overflow content outside the slider container */
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Centers the slider */
+    background-color: #1f1f1f; /* Background color for the slider */
+    border-radius: 10px; /* Rounds slider corners */
+ }
+ 
+ /* Slides Container */
+ .slides {
+    display: flex; /* Places slides side by side in a row */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for slide movement */
+ }
+ 
+ /* Individual Slide */
+ .slide {
+    min-width: 100%; /* Each slide takes the full width of the slider */
+    text-align: center; /* Centers content in the slide */
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding in element width/height */
+ }
+ 
+ .slide img {
+    width: 150px; /* Adjust image size */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 2px solid #ff5252; /* Adds border around the image */
+    margin-bottom: 10px;
+ }
+ 
+ .slide h3 {
+    margin: 10px 0 5px; /* Spacing around the heading */
+    font-size: 1.5em;
+    color: #ff5252; /* Highlight the name in the theme color */
+ }
+ 
+ .slide p {
+    font-size: 1em;
+    color: #f0f0f0; /* Text color */
+ }
+ 
+ /* Navigation Arrows */
+ .arrow {
+   position: absolute; /* Positioned relative to the slider */
+   top: 50%; /* Center vertically */
+   transform: translateY(-50%); /* Adjust alignment */
+   display: flex; /* Enable flexbox for centering */
+   align-items: center; /* Center content vertically */
+   justify-content: center; /* Center content horizontally */
+   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+   border: none;
+   color: #fff; /* Arrow color */
+   font-size: 2em;
+   width: 40px; /* Ensures circle shape */
+   height: 40px; /* Ensures circle shape */
+   cursor: pointer; /* Indicates clickable area */
+   z-index: 1; /* Ensures arrows appear above slides */
+   border-radius: 50%; /* Makes the arrow button circular */
+}
+
+.arrow:hover {
+   background-color: rgba(255, 82, 82, 0.8); /* Highlight on hover */
+}
+
+ 
+ /* Left Arrow */
+ .arrow.left {
+    left: 10px; /* Positions left arrow */
+ }
+ 
+ /* Right Arrow */
+ .arrow.right {
+    right: 10px; /* Positions right arrow */
+ }
+ 
+
+ 
+ 
+ 

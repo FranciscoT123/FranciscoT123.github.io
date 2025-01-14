@@ -1,156 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage Fright Merch</title>
-    <link rel="stylesheet" href="project.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Stage Fright Merch</title>
+   <link rel="stylesheet" href="project.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="path-to-your-logo.png" alt="Stage Fright Logo" class="logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#tour">Tour</a></li>
-                <li><a href="index.html#merch">Shop</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="merch-page">
-            <h1>Merchandise</h1>
-            <div class="merch-items">
-                <div class="item">
-                    <img src="tshirt.jpg" alt="Band T-Shirt">
-                    <h3>Band T-Shirt</h3>
-                    <p>Price: $25.00</p>
-                    <label for="tshirt-size">Size:</label>
-                    <select id="tshirt-size">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button onclick="addToCart('Band T-Shirt', 25, 'tshirt-size')">Add to Cart</button>
-                </div>
-
-                <div class="item">
-                    <img src="hoodie.jpg" alt="Band Hoodie">
-                    <h3>Band Hoodie</h3>
-                    <p>Price: $40.00</p>
-                    <label for="hoodie-size">Size:</label>
-                    <select id="hoodie-size">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button onclick="addToCart('Band Hoodie', 40, 'hoodie-size')">Add to Cart</button>
-                </div>
-
-                <div class="item">
-                    <img src="poster.jpg" alt="Band Poster">
-                    <h3>Band Poster</h3>
-                    <p>Price: $10.00</p>
-                    <button onclick="addToCart('Band Poster', 10, null)">Add to Cart</button>
-                </div>
-            </div>
-
-            <section id="tickets">
-                <h1>Buy Tickets</h1>
-                <div class="ticket-options">
-                    <div class="ticket-item">
-                        <p>March 15, 2025 - New York, NY</p>
-                        <button onclick="purchaseTicket('March 15, 2025', 'New York, NY')">Buy Tickets</button>
-                    </div>
-                    <div class="ticket-item">
-                        <p>April 10, 2025 - Los Angeles, CA</p>
-                        <button onclick="purchaseTicket('April 10, 2025', 'Los Angeles, CA')">Buy Tickets</button>
-                    </div>
-                    <div class="ticket-item">
-                        <p>May 5, 2025 - Chicago, IL</p>
-                        <button onclick="purchaseTicket('May 5, 2025', 'Chicago, IL')">Buy Tickets</button>
-                    </div>
-                </div>
-            </section>
-
-            <section id="cart">
-                <h2>Your Cart</h2>
-                <div id="cart-items">
-                    <p>Your cart is empty.</p>
-                </div>
-                <button onclick="checkout()">Checkout</button>
-            </section>
-        </section>
-    </main>
-
-    <footer>
-        <footer>
-            <p>&copy; 2025 Stage Fright. All Rights Reserved.</a></p>
-            <p>Blanson CTE High School Chapter 3 (TX)</a>.</p>
-            <p>Christopher De La Cruz, Damianne Sarr , Francisco Tovar, Dung Vuong</a>.</p>
-            <p>(435) Website Design Team</a>.</p>
-            <p>Blanson CTE, Houston Texas, 2025</a>.</p>
-     
-     
-        </footer>
-    </footer>
-
-    <script>
-        const cart = [];
-
-        function addToCart(itemName, price, sizeId) {
-            const size = sizeId ? document.getElementById(sizeId).value : null;
-            cart.push({ itemName, price, size });
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartContainer = document.getElementById('cart-items');
-            if (cart.length === 0) {
-                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-                return;
-            }
-
-            cartContainer.innerHTML = cart
-                .map(
-                    (item, index) => `
-                        <div class="cart-item">
-                            <p>${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}</p>
-                            <button onclick="removeFromCart(${index})">Remove</button>
-                        </div>
-                    `
-                )
-                .join('');
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty. Add items before checking out.');
-                return;
-            }
-
-            let cartSummary = cart
-                .map(item => `${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}`)
-                .join('\n');
-            alert(`Checkout Summary:\n${cartSummary}\n\nThank you for your purchase!`);
-            cart.length = 0;
-            updateCart();
-        }
-
-        function purchaseTicket(date, location) {
-            alert(`You have selected tickets for ${location} on ${date}. Proceeding to checkout.`);
-        }
-    </script>
+   <header>
+       <div class="logo-container">
+           <img src="path-to-your-logo.png" alt="Stage Fright Logo" class="logo">
+       </div>
+       <nav>
+           <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="index.html#tour">Tour</a></li>
+               <li><a href="index.html#merch">Shop</a></li>
+               <li><a href="index.html#contact">Contact Us</a></li>
+           </ul>
+       </nav>
+   </header>
+   <main>
+       <section id="merch-page">
+           <h2>Merchandise</h2>
+           <div class="merch-items">
+               <div class="item">
+                   <img src="tshirt.jpg" alt="Band T-Shirt">
+                   <h3>Band T-Shirt</h3>
+                   <p>Price: $25.00</p>
+                   <label for="tshirt-size">Size:</label>
+                   <select id="tshirt-size">
+                       <option value="small">Small</option>
+                       <option value="medium">Medium</option>
+                       <option value="large">Large</option>
+                       <option value="xl">XL</option>
+                   </select>
+                   <button onclick="addToCart('Band T-Shirt', 25, 'tshirt-size')">Add to Cart</button>
+               </div>
+               <div class="item">
+                   <img src="hoodie.jpg" alt="Band Hoodie">
+                   <h3>Band Hoodie</h3>
+                   <p>Price: $40.00</p>
+                   <label for="hoodie-size">Size:</label>
+                   <select id="hoodie-size">
+                       <option value="small">Small</option>
+                       <option value="medium">Medium</option>
+                       <option value="large">Large</option>
+                       <option value="xl">XL</option>
+                   </select>
+                   <button onclick="addToCart('Band Hoodie', 40, 'hoodie-size')">Add to Cart</button>
+               </div>
+               <div class="item">
+                   <img src="poster.jpg" alt="Band Poster">
+                   <h3>Band Poster</h3>
+                   <p>Price: $10.00</p>
+                   <button onclick="addToCart('Band Poster', 10, null)">Add to Cart</button>
+               </div>
+           </div>
+           <section id="tickets">
+               <h2>Buy Tickets</h2>
+               <div class="ticket-options">
+                   <div class="ticket-item">
+                       <p>March 15, 2025 - New York, NY</p>
+                       <button onclick="purchaseTicket('March 15, 2025', 'New York, NY')">Buy Tickets</button>
+                   </div>
+                   <div class="ticket-item">
+                       <p>April 10, 2025 - Los Angeles, CA</p>
+                       <button onclick="purchaseTicket('April 10, 2025', 'Los Angeles, CA')">Buy Tickets</button>
+                   </div>
+                   <div class="ticket-item">
+                       <p>May 5, 2025 - Chicago, IL</p>
+                       <button onclick="purchaseTicket('May 5, 2025', 'Chicago, IL')">Buy Tickets</button>
+                   </div>
+               </div>
+           </section>
+           <section id="cart">
+               <h2>Your Cart</h2>
+               <div id="cart-items">
+                   <p>Your cart is empty.</p>
+               </div>
+               <button onclick="checkout()">Checkout</button>
+           </section>
+       </section>
+   </main>
+   <footer>
+       <p>© 2025 Stage Fright. All Rights Reserved.</p>
+       <p>Blanson CTE High School Chapter 3 (TX).</p>
+       <p>Christopher De La Cruz, Damianne Sarr , Francisco Tovar, Dung Vuong.</p>
+       <p>(435) Website Design Team.</p>
+       <p>Blanson CTE, Houston Texas, 2025.</p>
+   </footer>
+   <script>
+       const cart = [];
+       function addToCart(itemName, price, sizeId) {
+           const size = sizeId ? document.getElementById(sizeId).value : null;
+           cart.push({ itemName, price, size });
+           updateCart();
+       }
+       function updateCart() {
+           const cartContainer = document.getElementById('cart-items');
+           if (cart.length === 0) {
+               cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+               return;
+           }
+           cartContainer.innerHTML = cart
+               .map((item, index) => `
+                   <div class="cart-item">
+                       <p>${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}</p>
+                       <button onclick="removeFromCart(${index})">Remove</button>
+                   </div>
+               `)
+               .join('');
+       }
+       function removeFromCart(index) {
+           cart.splice(index, 1);
+           updateCart();
+       }
+       function checkout() {
+           if (cart.length === 0) {
+               alert('Your cart is empty. Add items before checking out.');
+               return;
+           }
+           let cartSummary = cart
+               .map(item => `${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}`)
+               .join('\\n');
+           alert(`Checkout Summary:\\n${cartSummary}\\n\\nThank you for your purchase!`);
+           cart.length = 0;
+           updateCart();
+       }
+       function purchaseTicket(date, location) {
+           alert(`You have selected tickets for ${location} on ${date}. Proceeding to checkout.`);
+       }
+   </script>
 </body>
 </html>

@@ -91,46 +91,48 @@
        <p>Blanson CTE, Houston Texas, 2025.</p>
    </footer>
    <script>
-       const cart = [];
-       function addToCart(itemName, price, sizeId) {
-           const size = sizeId ? document.getElementById(sizeId).value : null;
-           cart.push({ itemName, price, size });
-           updateCart();
-       }
-       function updateCart() {
-           const cartContainer = document.getElementById('cart-items');
-           if (cart.length === 0) {
-               cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-               return;
-           }
-           cartContainer.innerHTML = cart
-               .map((item, index) => `
-                   <div class="cart-item">
-                       <p>${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}</p>
-                       <button onclick="removeFromCart(${index})">Remove</button>
-                   </div>
-               `)
-               .join('');
-       }
-       function removeFromCart(index) {
-           cart.splice(index, 1);
-           updateCart();
-       }
-       function checkout() {
-           if (cart.length === 0) {
-               alert('Your cart is empty. Add items before checking out.');
-               return;
-           }
-           let cartSummary = cart
-               .map(item => `${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}`)
-               .join('\\n');
-           alert(`Checkout Summary:\\n${cartSummary}\\n\\nThank you for your purchase!`);
-           cart.length = 0;
-           updateCart();
-       }
-       function purchaseTicket(date, location) {
-           alert(`You have selected tickets for ${location} on ${date}. Proceeding to checkout.`);
-       }
-   </script>
+    const cart = [];
+    function addToCart(itemName, price, sizeId) {
+        const size = sizeId ? document.getElementById(sizeId).value : null;
+        cart.push({ itemName, price, size });
+        updateCart();
+    }
+    function updateCart() {
+        const cartContainer = document.getElementById('cart-items');
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+        }
+        cartContainer.innerHTML = cart
+            .map(
+                (item, index) => `
+                    <div class="cart-item">
+                        <p>${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}</p>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `
+            )
+            .join('');
+    }
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+    function checkout() {
+        if (cart.length === 0) {
+            alert('Your cart is empty. Add items before checking out.');
+            return;
+        }
+        let cartSummary = cart
+            .map(item => `${item.itemName} - $${item.price}${item.size ? ` (Size: ${item.size})` : ''}`)
+            .join('\n');
+        alert(`Checkout Summary:\n${cartSummary}\n\nThank you for your purchase!`);
+        cart.length = 0;
+        updateCart();
+    }
+    function purchaseTicket(date, location) {
+        alert(`You have selected tickets for ${location} on ${date}. Proceeding to checkout.`);
+    }
+</script>
 </body>
 </html>
